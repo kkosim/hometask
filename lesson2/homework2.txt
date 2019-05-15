@@ -1,0 +1,22 @@
+1. привести в порядок репозиторий
+2. изучить библиотеку time, strings(split, replace, repeat, insert)
+3. задача: создать терминал оплаты платежей 
+
+Welcome to our pay terminal!
+
+Choose your terminal
+
+1 - Megafon
+2 - Beeline
+3 - Babilon
+4 - Tcell
+
+//  Please choose correct operator number
+
+Enter your number (Operator): 919026839
+
+// Please enter right phone number
+
+Amount: 45.2
+
+// Please enter right sum
