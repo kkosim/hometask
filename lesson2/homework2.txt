@@ -20,3 +20,11 @@ Enter your number (Operator): 919026839
 Amount: 45.2
 
 // Please enter right sum
+
+-----------------------------
+Operator: Megafon
+Number: 919026839
+Amount: 45.2
+Date: 15.06.19 23:54
+OperationStatus: Successfu;
+-----------------------------
