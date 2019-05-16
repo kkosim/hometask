@@ -49,11 +49,12 @@ func main() {
 		if (number < "410000000") || (number > "989999999") {
 			fmt.Println("Please type right phone number")
 		} else {
+			counter := 0
 			//if the dim is corrct, check if the prefix is correct
 			for i, uOper := range uOperator {
 				//finds the needed operator
 				if id == i {
-					counter := 0
+
 					//goes through all prefixes of operator
 					for j := 0; j < len(uOper); j = j + 1 {
 						//checks if any of them matches
@@ -61,16 +62,16 @@ func main() {
 							counter = counter + 1
 						}
 					}
-					//if there is no concide ask for reiteration
-					if counter == 0 {
-						fmt.Println("Please type right phone number ---")
-					} else {
-						//else move forvard
-						break
-					}
+					//if there is no match ask for reiteration
 				}
 			}
-			break
+			if counter == 0 {
+				fmt.Print("Please type right phone number")
+			} else {
+				//else move forvard
+				break
+			}
+			//break
 		}
 	}
 	var amount float32
