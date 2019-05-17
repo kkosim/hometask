@@ -47,7 +47,7 @@ func main() {
 		fmt.Scan(&number)
 		//checking if number dimension is correct
 		if (number < "410000000") || (number > "989999999") {
-			fmt.Println("Please type right phone number")
+			fmt.Println("Please type right phone number ")
 		} else {
 			counter := 0
 			//if the dim is corrct, check if the prefix is correct
@@ -62,16 +62,16 @@ func main() {
 							counter = counter + 1
 						}
 					}
-					//if there is no match ask for reiteration
+
 				}
 			}
+			//if there is no match ask for reiteration
 			if counter == 0 {
-				fmt.Print("Please type right phone number")
+				fmt.Print("Please type right phone number ")
 			} else {
 				//else move forvard
 				break
 			}
-			//break
 		}
 	}
 	var amount float32
