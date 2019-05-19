@@ -1,81 +1,56 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-)
+import "fmt"
 
 func main() {
 	var exitTerminal bool
 	var number string
 	var sum float32
-	operator := map[int]string{
-		1: "Megafon",
-		2: "Babilon",
-		3: "Tcell",
-		4: "Beeline",
+	pizzaSize := map[string]float32{
+		"Small":      0.75,
+		"Medium":     1,
+		"Big":        1.5,
+		"For family": 2,
 	}
+	pizzaTypesIngredients := map[int]string{
+		1:  "Margherita",
+		2:  "Marinara",
+		3:  "Assorti",
+		4:  "Carbonara",
+		5:  "Frutti di Mare",
+		6:  "Quattro Formaggi",
+		7:  "Crudo",
+		8:  "Napoletana",
+		9:  "Pugliese",
+		10: "Montanara",
+		11: "Emiliana",
+		12: "Romana",
+		13: "Fattoria",
+		14: "Schiacciata",
+		15: "prosciutto",
+	}
+	pizzaPrice := []float32{31, 33, 32, 35, 36, 31, 33, 25, 36, 21, 39, 32, 30, 28, 32}
 
-	for !exitTerminal {
-		var operatorCheck bool
-		var numberCheck bool
-		var sumCheck bool
-		var commandCheck bool
-		var command string
-		var id int
-		PrintMainScreen()
+	for !SizeCheck {
+		fmt.Scan(&size)
 
-		for !operatorCheck {
-			fmt.Scan(&id)
-
-			if id >= 1 && id <= 4 {
-				operatorCheck = true
-				for i, oper := range operator {
-					if id == i {
-						fmt.Printf("Please type your phone number (%s): ", oper)
-					}
-				}
-			} else {
-				fmt.Println("Please, choose right operator")
-			}
+		if size >= 1 && size <= 4 {
+			SizeCheck = true
+		} else {
+			fmt.Println("Please choose right size")
 		}
-		for !numberCheck {
-			fmt.Scan(&number)
-
-			if CheckNumber(id, number) {
-				numberCheck = true
+	}
+	for i, spec := range pizzaTypesIngredients {
+		fmt.Println("Please choose the pizza you prefer")
+		fmt.Printf("%d -- %s", i, spec)
+		fmt.Scan(&speciesID)
+		for {
+			if speciesID > 15 || speciesID < 1 {
+				fmt.Println("Please select one of the following ")
 			} else {
-				fmt.Println("Please, enter right number")
-			}
-		}
-		number, _ := strconv.Atoi(number)
-
-		fmt.Print("Enter Amount: ")
-		for !sumCheck {
-			fmt.Scan(&sum)
-
-			if sum > 0 {
-				sumCheck = true
-			} else {
-				fmt.Println("Please, enter right sum")
-			}
-		}
-
-		PrintCheque(operator, id, number, sum)
-		fmt.Println("esc- to go exit, back - to go to terminal")
-
-		for !commandCheck {
-			fmt.Scan(&command)
-
-			if command == "esc" {
-				commandCheck = true
-				exitTerminal = true
-			} else if command == "back" {
-				commandCheck = true
-				continue
+				break
 			}
 		}
 	}
 
-	fmt.Println("application terminated")
 }
