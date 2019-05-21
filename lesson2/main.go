@@ -124,7 +124,7 @@ func main() {
 		}
 		currentTime := time.Now()
 		fmt.Println("------------------------------")
-		fmt.Printf("Operator : %s \nNumber: %s \nAmount %v \nDate: %s \nOperationStatus: Successful \n", operator[id], number, amount, currentTime.Format("2006.01.02 15:04"))
+		fmt.Printf("Operator : %s \nNumber: %d \nAmount %v \nDate: %s \nOperationStatus: Successful \n", operator[id], number, amount, currentTime.Format("2006.01.02 15:04"))
 		fmt.Println("------------------------------")
 	}
 }

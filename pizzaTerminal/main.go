@@ -1,10 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-	var exitTerminal bool
-	var number string
+	//var exitTerminal bool
+	var size string
+	var SizeCheck bool
+	var speciesID int
+	/*var number string
 	var sum float32
 	pizzaSize := map[string]float32{
 		"Small":      0.75,
@@ -12,6 +18,14 @@ func main() {
 		"Big":        1.5,
 		"For family": 2,
 	}
+	pizzaSizeId := map[int]string{
+
+		1: "Small",
+		2: "Medium",
+		3: "Big",
+		4: "For family",
+	}*/
+	PrintMainScreen()
 	pizzaTypesIngredients := map[int]string{
 		1:  "Margherita",
 		2:  "Marinara",
@@ -29,12 +43,15 @@ func main() {
 		14: "Schiacciata",
 		15: "prosciutto",
 	}
-	pizzaPrice := []float32{31, 33, 32, 35, 36, 31, 33, 25, 36, 21, 39, 32, 30, 28, 32}
+	//pizzaPrice := []float32{31, 33, 32, 35, 36, 31, 33, 25, 36, 21, 39, 32, 30, 28, 32}
 
 	for !SizeCheck {
 		fmt.Scan(&size)
 
-		if size >= 1 && size <= 4 {
+		if size == "esc" {
+			os.Exit(1)
+		}
+		if size >= "1" && size <= "4" {
 			SizeCheck = true
 		} else {
 			fmt.Println("Please choose right size")

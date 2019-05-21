@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func PrintMainScreen() {
@@ -14,9 +13,9 @@ func PrintMainScreen() {
 	fmt.Println("4 - For family")
 }
 
-func PrintCheque(operator map[int]string, id int, number int, amount float32) {
-	currentTime := time.Now()
+func PrintCheque(size map[int]string, id int, number int, amount float32) {
+	//currentTime := time.Now()
 	fmt.Println("---------------------------------------------")
-	fmt.Printf("Size : %s \nSpecies: %s \nNumber %d \nDate: %s \nTotal Sum: %d \n",pizzaTypesIngredients[speciesID] , , ,currentTime.Format("2006.01.02 15:04"), )
+	//fmt.Printf("Size : %s \nSpecies: %s \nNumber %d \nDate: %s \nTotal Sum: %d \n",pizzaSizeId[size] ,pizzaTypesIngredients[speciesID] , , ,currentTime.Format("2006.01.02 15:04"), )
 	fmt.Println("---------------------------------------------")
 }

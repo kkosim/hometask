@@ -1,0 +1,5 @@
+prevoius homework
+structs learn
+
+
+hash(login:pass:dd.yyyy)
